@@ -1,0 +1,36 @@
+
+/* THIS IS REGISTRATION SECTION CSS IN REACT VITE OF THIS WEB API */
+.main_re{
+    display: flex;
+    width: 100%;
+    gap: 50px;
+    height: 100px;
+    margin-left: 50px;
+}
+.main_re .ma_h1{
+    width: 45%;
+    text-align: center;
+    margin-top: 25px;
+}
+.main_re .ma1_h1{
+    width: 45%;
+    margin-top: 25px;
+}
+.logo{
+    width: 10%;
+    height: 100px;
+}
+.logo img{
+    width: 75%;
+    height: 100px;
+    text-align: center;
+}
+.reg{
+    background-color: blueviolet;
+    padding: 50px;
+}
+
+
+.reg .re_h1{
+    text-align: center;
+}
