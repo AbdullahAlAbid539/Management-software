@@ -1,3 +1,23 @@
+/* THIS IS UNIVERSAL SELECTION OF THIS WEB IT WILL DIRECT WORK ON THE WHOLE WEBSITE TAG */
+
+table{
+    margin-top: 25px;
+}
+
+a{
+    text-decoration: none;
+    display: inline-block;
+    gap: 50px;
+    color: blue;
+}
+
+a:hover{
+    background-color: rgb(61, 131, 211);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 60px;
+}
+
 
 /* THIS IS REGISTRATION SECTION CSS IN REACT VITE OF THIS WEB API */
 .main_re{
@@ -31,6 +51,73 @@
 }
 
 
-.reg .re_h1{
+
+/* THIS IS LOGIN SECTION CSS */
+
+.reg_lo{
+    background-color: blueviolet;
+    padding: 50px;
+}
+
+.reg_lo .re_h1{
     text-align: center;
+}
+
+.logo_lo {
+    text-align: center;
+    height: 100px;
+    background-color: blueviolet;
+}
+.logo_lo img{
+    height: 100px;
+    margin-top: 10px;
+}
+
+
+/* THIS IS ACCOUNT JSX AREA OF THIS WEB */
+
+.reg_ac{
+    background-color: blueviolet;
+    padding: 50px;
+}
+
+.ac_lo{
+    text-align: center;
+}
+
+.ac_lo img{
+    height: 100px;
+    margin-top: 10px;
+}
+
+.ac_h1{
+    text-align: center;
+}
+
+
+/* THIS IS MAIN MENU TEACHER JSX CSS AREA  */
+
+.main_menu{
+    display: flex;
+    gap: 30px;
+}
+.main_menu .left{
+    width: 20%;
+}
+.main_menu .right{
+    width: 80%;
+}
+
+
+/* THIS IS COMPONENTS SIDE JSX CSS AREA FILE */
+
+.side{
+    background-color: rgb(61, 131, 211);
+    height: 100vh;
+}
+.side .logo_si{
+    text-align: center;
+}
+.side .logo_si img{
+    height: 100px;
 }

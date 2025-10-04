@@ -5,17 +5,20 @@ import Container from 'react-bootstrap/Container';
 import { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
 
-
-const Registration = () => {
+const Account = () => {
     let [userName,setUserName]= useState("")
     let [email,setEmail]= useState("")
     let [password,setPassword]= useState("")
+    let [date,setDate]= useState("")
+    let [id,setId]= useState("")
 
     // THIS IS ERROR HANDELING VARIABLE
 
     let [userNameError,setUserNameError]= useState("")
     let [emailError,setEmailError]= useState("")
     let [passwordError,setPasswordError]= useState("")
+    let [dateError,setDateError]= useState("")
+    let [idError,setIdError]= useState("")
 
     // THIS IS Registration HANDELING VARIABLE
 
@@ -31,6 +34,14 @@ const Registration = () => {
         setPassword(e.target.value)
         setPasswordError("")
     }
+    let handledate =(e)=>{
+        setDate(e.target.value)
+        setDateError("")
+    }
+    let handleid =(e)=>{
+        setId(e.target.value)
+        setIdError("")
+    }
 
     let handlesubmit =(e)=>{
         e.preventDefault()
@@ -43,18 +54,22 @@ const Registration = () => {
         if(!password){
             setPasswordError("Password is Required")
         }
-    }
+        if(!date){
+            setDateError("Date Of Birth Required")
+        }
+        if(!id){
+            setIdError("ID Number Required")
+        }
 
+    }
   return (
     <>
-    <div className='main_re'>
-        <div className='ma_h1'><h1>Barishal Polytechnic Institute</h1></div>
-        <div className='logo'>
-            <img src="public/pic/img.png" alt="logo" />
-        </div>
-        <div className='ma1_h1'><h1>DEPT:- CST (21-22)</h1></div>
-    </div>
-    <div className='reg'>
+      <div className='reg_ac'>
+
+        <div className='ac_lo'><img src="public/pic/img.png" alt="logo" /></div>
+
+        <div className='ac_h1'><h1><i>Create an Account here</i></h1></div>
+
         <Container>
         <Form>
         <Form.Group className="mb-3" controlId="formBasicUsername">
@@ -105,6 +120,32 @@ const Registration = () => {
                 }
             </Alert>
         }
+        <Form.Group className="mb-3" controlId="formBasicDate">
+            <Form.Label>Date of Birth</Form.Label>
+            <Form.Control onChange={handledate} type="date" />
+        </Form.Group>
+
+        {
+            dateError &&
+            <Alert key="danger" variant="danger">
+                {
+                    dateError
+                }
+            </Alert>
+        }
+        <Form.Group className="mb-3" controlId="formBasicId">
+            <Form.Label>ID No</Form.Label>
+            <Form.Control onChange={handleid} type="number" placeholder="Enter Your ID Number" />
+        </Form.Group>
+
+        {
+            idError &&
+            <Alert key="danger" variant="danger">
+                {
+                    idError
+                }
+            </Alert>
+        }
 
 
         <Button onClick={handlesubmit} variant="primary" type="submit">
@@ -113,7 +154,7 @@ const Registration = () => {
         </Form><br />
 
         <Alert key="warning" variant="warning">
-          Already Have an Account? <a href="/login">Login</a> or <a href="/account">Create an Account</a>
+          Already Have an Account? <a href="/login">Login</a>
         </Alert>
     </Container>
     </div>
@@ -121,4 +162,4 @@ const Registration = () => {
   )
 }
 
-export default Registration
+export default Account

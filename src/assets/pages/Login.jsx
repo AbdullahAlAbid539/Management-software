@@ -35,9 +35,12 @@ const Login = () => {
 
   return (
     <>
-      <div className='reg'>
+
+    <div className='logo_lo'><img src="public/pic/img.png" alt="logo" /></div>
+      <div className='reg_lo'>
 
         <div className='re_h1'><h1><b>Login Page</b></h1></div>
+
 
         <Container>
         <Form>
@@ -80,6 +83,10 @@ const Login = () => {
             Submit
         </Button>
         </Form>
+
+        <Alert key="warning" variant="warning">
+          Don't Have an Account? <a href="/account">Create an Account</a> or <a href="/">Registration</a>
+        </Alert>
     </Container>
     </div>
     </>
