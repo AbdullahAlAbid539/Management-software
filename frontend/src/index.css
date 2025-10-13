@@ -18,6 +18,20 @@ a:hover{
     border-radius: 60px;
 }
 
+.a1{
+    background-color: white;
+    padding: 7px 13px;
+    margin-top: 25px;
+    margin-left: 50px;
+    border-radius: 25px;
+}
+
+.a1:hover{
+    background-color: blueviolet;
+    color: white;
+    border-radius: 60px;
+    padding: 10px 15px;
+}
 
 /* THIS IS REGISTRATION SECTION CSS IN REACT VITE OF THIS WEB API */
 .main_re{

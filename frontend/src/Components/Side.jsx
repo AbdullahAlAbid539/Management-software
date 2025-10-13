@@ -1,5 +1,6 @@
 import React from 'react'
 import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
 
 const Side = () => {
   return (
@@ -27,6 +28,10 @@ const Side = () => {
         <a href="/pdf">PDF Of Book</a>
       </ListGroup.Item>
     </ListGroup>
+
+    <a href="/" className='a1'>Logout</a>
+
+
       
     </div>
   )
