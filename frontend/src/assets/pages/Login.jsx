@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
+import axios from 'axios';
 
 const Login = () => {
 
@@ -30,6 +31,12 @@ const Login = () => {
         }
         if(!password){
           setPasswordError("Password is Required")
+        }
+        if(email && password){
+            axios.post("http://localhost:5000/login",{
+                email:email,
+                password:password
+            })
         }
     }
 

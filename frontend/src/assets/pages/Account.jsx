@@ -4,6 +4,9 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
+import axios from 'axios'
+
+
 
 const Account = () => {
     let [userName,setUserName]= useState("")
@@ -59,6 +62,16 @@ const Account = () => {
         }
         if(!id){
             setIdError("ID Number Required")
+        }
+
+        if(userName && email && password && date && id){
+            axios.post("http://localhost:5000/account",{
+                username:userName,
+                email:email,
+                password:password,
+                date:date,
+                id:id
+            })
         }
 
     }
