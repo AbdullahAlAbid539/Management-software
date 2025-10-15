@@ -13,6 +13,11 @@ const Login = () => {
     let [emailError,setEmailError]= useState("")
     let [passwordError,setPasswordError]= useState("")
 
+    let [id,setId]=useState("")
+    let [idError,setIdError]=useState("")
+
+    let [message,setMessage]=useState("")
+
     // THIS IS Registration HANDELING VARIABLE
 
     let handleemail =(e)=>{
@@ -23,6 +28,10 @@ const Login = () => {
         setPassword(e.target.value)
         setPasswordError("")
     }
+    let handleid =(e)=>{
+        setId(e.target.value)
+        setIdError("")
+    }
 
     let handlesubmit =(e)=>{
         e.preventDefault()
@@ -32,10 +41,18 @@ const Login = () => {
         if(!password){
           setPasswordError("Password is Required")
         }
-        if(email && password){
+        if(!id){
+            setIdError("Your ID Number Required")
+        }
+        if(email && password && id){
             axios.post("http://localhost:5000/login",{
                 email:email,
-                password:password
+                password:password,
+                id:id
+            }).then((data)=>{
+                if(typeof data.data =="string"){
+                    setMessage(data.data)
+                }
             })
         }
     }
@@ -50,6 +67,17 @@ const Login = () => {
 
 
         <Container>
+            
+            {
+                message &&
+                <Alert key="danger" variant="danger">
+                {
+                    message
+                }
+            </Alert>
+
+            }
+
         <Form>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -81,6 +109,19 @@ const Login = () => {
             <Alert key="danger" variant="danger">
                 {
                     passwordError
+                }
+            </Alert>
+        }
+        <Form.Group className="mb-3" controlId="formBasicId">
+            <Form.Label>ID Number</Form.Label>
+            <Form.Control onChange={handleid} type="number" placeholder="Enter Your ID" />
+        </Form.Group>
+
+        {
+            idError &&
+            <Alert key="danger" variant="danger">
+                {
+                    idError
                 }
             </Alert>
         }

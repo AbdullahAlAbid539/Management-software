@@ -37,6 +37,13 @@ app.post('/account',async (req, res) => {
     return res.send(`${req.body.email} already exist`)
   }
 
+  let isuser = await User.findOne({id:req.body.id})
+
+  if(isuser){
+    return res.send(`${req.body.id} already exists Please Enter Your Correct id`)
+  }
+
+
     let user = new User({
         username:req.body.username,
         email:req.body.email,
@@ -50,12 +57,17 @@ app.post('/login',async (req, res) => {
 
 
   let isUserexists = await User.findOne({email: req.body.email})
+  let isuser = await User.findOne({id: req.body.id})
 
   if(!isUserexists){
     return res.send(`${req.body.email} not found`)
   }
   if(isUserexists.password !== req.body.password){
     return res.send(`Invalid Password`)
+  }
+
+  if(!isuser){
+    return res.send(`${req.body.id} is doesnot found Please enter your correct id`)
   }
      res.send({
       username:isUserexists.username,

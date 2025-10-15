@@ -71,6 +71,8 @@ const Account = () => {
                 password:password,
                 date:date,
                 id:id
+            }).then((data)=>{
+                console.log(data)
             })
         }
 
