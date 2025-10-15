@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { FaPencil } from "react-icons/fa6";
 
 const Student = () => {
 
@@ -79,6 +81,7 @@ const Student = () => {
           <th>Department Name</th>
           <th>Student ID</th>
           <th>Phone Number</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -88,6 +91,7 @@ const Student = () => {
           <td>Computer</td>
           <td>123401</td>
           <td>018********</td>
+          <td><Button variant="primary"><FaPencil />Edit</Button> <Button variant="danger"><RiDeleteBin5Line />Delete</Button></td>
         </tr>
         <tr>
           <td>2</td>
@@ -95,6 +99,7 @@ const Student = () => {
           <td>Computer</td>
           <td>123402</td>
           <td>016********</td>
+          <td><Button variant="primary"><FaPencil />Edit</Button> <Button variant="danger"><RiDeleteBin5Line />Delete</Button></td>
         </tr>
         <tr>
           <td>3</td>
@@ -102,6 +107,7 @@ const Student = () => {
           <td>Computer</td>
           <td>123403</td>
           <td>017********</td>
+          <td><Button variant="primary"><FaPencil />Edit</Button> <Button variant="danger"><RiDeleteBin5Line />Delete</Button></td>
         </tr>
       </tbody>
     </Table>

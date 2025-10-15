@@ -54,11 +54,14 @@ const Login = () => {
             }).then((data)=>{
                 if(typeof data.data =="string"){
                     setMessage(data.data)
+                }else{
                     navigate("/home")
                 }
             })
         }
     }
+
+
 
   return (
     <>

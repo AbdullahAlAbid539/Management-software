@@ -6,6 +6,8 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
 import axios from 'axios';
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { FaPencil } from "react-icons/fa6";
 
 const Teacher = () => {
 
@@ -84,16 +86,19 @@ const Teacher = () => {
           <th>Department Name</th>
           <th>Teacher ID</th>
           <th>Phone Number</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
 
-        {data.map((item,index)=>(        <tr>
+        {data.map((item,index)=>(        
+        <tr>
           <td>{index+1}</td>
           <td>{item.name}</td>
           <td>{item.username}</td>
           <td>1234501</td>
           <td>{item.phone}</td>
+          <td><Button variant="primary"><FaPencil />Edit</Button> <Button variant="danger"><RiDeleteBin5Line />Delete</Button></td>
         </tr>
         ))}
       </tbody>

@@ -77,6 +77,8 @@ const Account = () => {
             }).then((data)=>{
                 if(typeof data.data == "string"){
                     setMessage(data.data)
+                }else{
+                    localStorage.setItem("userinfo",JSON.stringify(data.data))
                     navigate("/")
                 }
             })

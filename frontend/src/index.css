@@ -109,11 +109,10 @@ a:hover{
 }
 
 
-/* THIS IS MAIN MENU TEACHER JSX CSS AREA  */
-
+/* THIS IS MAIN MENU JSX CSS AREA  */
 .main_menu{
     display: flex;
-    gap: 30px;
+    gap: 50px;
 }
 .main_menu .left{
     width: 20%;
@@ -121,6 +120,36 @@ a:hover{
 .main_menu .right{
     width: 80%;
 }
+.main_menu .right .right_main{
+    display: flex;
+    gap: 50px;
+}
+.main_menu .right .right_main .right_one{
+    padding-top: 50px;
+    width: 60%;
+    border: 100px;
+    background-color: gainsboro;
+}
+.main_menu .right .right_main .right_two{
+    padding-top: 25px;
+    width: 40%;
+    background-color: gainsboro;
+}
+.main_menu .right .right_main .right_two img{
+    padding-left: 92.5px;
+}
+.main_menu .right .right_main .right_two h1{
+    background-color: rgb(124, 177, 43);
+    color: white;
+    text-align: center;
+}
+.main_menu .right .right_main .right_two p{
+    background-color: rgb(124, 177, 43);
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
+
 
 
 /* THIS IS COMPONENTS SIDE JSX CSS AREA FILE */
