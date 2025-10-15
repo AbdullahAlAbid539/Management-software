@@ -14,7 +14,6 @@ function App() {
   return (
     <>
     <Routes>
-      <Route path="/home" element={<Home />}/>
       <Route path="/student" element={<Student />}/>
       <Route path="/teacher" element={<Teacher />}/>
       <Route path="/" element={<Login />}/>
@@ -23,6 +22,7 @@ function App() {
       <Route path="/result" element={<Result />}/>
       <Route path="/pdf" element={<Pdf />}/>
       <Route path="/leave" element={<Leave />}/>
+      <Route path="/home" element={<Home />}/>
 
 
     </Routes>

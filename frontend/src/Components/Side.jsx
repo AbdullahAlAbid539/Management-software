@@ -10,6 +10,9 @@ const Side = () => {
 
     <ListGroup>
       <ListGroup.Item>
+        <a href="/home">Home</a>
+      </ListGroup.Item>
+      <ListGroup.Item>
         <a href="/teacher">Teacher</a>
       </ListGroup.Item>
       <ListGroup.Item>

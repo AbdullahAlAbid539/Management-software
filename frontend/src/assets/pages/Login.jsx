@@ -1,12 +1,13 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import { useState } from 'react';
+import { use, useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import axios from 'axios';
-import {Navigate, useNavigate} from 'react-router'
+import {useNavigate} from 'react-router'
 
 const Login = () => {
+    let navigate=useNavigate()
 
     let [email,setEmail]= useState("")
     let [password,setPassword]= useState("")
@@ -53,7 +54,7 @@ const Login = () => {
             }).then((data)=>{
                 if(typeof data.data =="string"){
                     setMessage(data.data)
-                    Navigate("/home")
+                    navigate("/home")
                 }
             })
         }
