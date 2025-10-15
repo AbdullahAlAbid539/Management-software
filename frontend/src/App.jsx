@@ -8,11 +8,13 @@ import Attendance from "./assets/pages/Attendance";
 import Result from "./assets/pages/Result";
 import Pdf from "./assets/pages/Pdf";
 import Leave from "./assets/pages/Leave";
+import Home from "./assets/pages/Home";
 function App() {
 
   return (
     <>
     <Routes>
+      <Route path="/home" element={<Home />}/>
       <Route path="/student" element={<Student />}/>
       <Route path="/teacher" element={<Teacher />}/>
       <Route path="/" element={<Login />}/>

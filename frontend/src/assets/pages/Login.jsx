@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import axios from 'axios';
+import {Navigate, useNavigate} from 'react-router'
 
 const Login = () => {
 
@@ -52,6 +53,7 @@ const Login = () => {
             }).then((data)=>{
                 if(typeof data.data =="string"){
                     setMessage(data.data)
+                    Navigate("/home")
                 }
             })
         }

@@ -5,15 +5,18 @@ import Container from 'react-bootstrap/Container';
 import { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import axios from 'axios'
+import {useNavigate} from 'react-router'
 
 
 
 const Account = () => {
+    let navigate=useNavigate()
     let [userName,setUserName]= useState("")
     let [email,setEmail]= useState("")
     let [password,setPassword]= useState("")
     let [date,setDate]= useState("")
     let [id,setId]= useState("")
+    let [message,setMessage]=useState("")
 
     // THIS IS ERROR HANDELING VARIABLE
 
@@ -72,7 +75,10 @@ const Account = () => {
                 date:date,
                 id:id
             }).then((data)=>{
-                console.log(data)
+                if(typeof data.data == "string"){
+                    setMessage(data.data)
+                    navigate("/")
+                }
             })
         }
 
@@ -86,6 +92,14 @@ const Account = () => {
         <div className='ac_h1'><h1><i>Create an Account here</i></h1></div>
 
         <Container>
+            {
+                message && 
+                <Alert key="danger" variant="danger">
+                {
+                    message
+                }
+                </Alert>
+            }
         <Form>
         <Form.Group className="mb-3" controlId="formBasicUsername">
             <Form.Label>User Name</Form.Label>
