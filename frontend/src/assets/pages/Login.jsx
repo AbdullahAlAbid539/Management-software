@@ -55,6 +55,7 @@ const Login = () => {
                 if(typeof data.data =="string"){
                     setMessage(data.data)
                 }else{
+                    localStorage.getItem("UserInfo",JSON.stringify(data.data))
                     navigate("/home")
                 }
             })

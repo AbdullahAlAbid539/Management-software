@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Side from '../../Components/Side'
+import { useNavigate } from 'react-router'
 
 const Attendance = () => {
+
+
+  let navigate = useNavigate()
+
+
+
+  useEffect(()=>{
+    let data = localStorage.getItem("UserInfo")
+
+    if(!data){
+      navigate("/")
+    }
+  },[])
+
+
+
   return (
     <>
 

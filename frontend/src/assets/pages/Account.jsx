@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import axios from 'axios'
-import {useNavigate} from 'react-router'
+import { useNavigate} from 'react-router'
 
 
 
@@ -75,10 +75,10 @@ const Account = () => {
                 date:date,
                 id:id
             }).then((data)=>{
-                if(typeof data.data == "string"){
+                if(typeof data.data=="string"){
                     setMessage(data.data)
                 }else{
-                    localStorage.setItem("userinfo",JSON.stringify(data.data))
+
                     navigate("/")
                 }
             })

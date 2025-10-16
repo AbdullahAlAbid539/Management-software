@@ -1,19 +1,29 @@
 import Side from '../../Components/Side'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
+import { useNavigate } from 'react-router';
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaPencil } from "react-icons/fa6";
 
 const Student = () => {
+  let navigate = useNavigate()
 
   const [show, setShow] = useState(false);
 
   const handleClose = () =>setShow(false);
   const handleShow = () => setShow(true);
 
+  useEffect(()=>{
+    let data = localStorage.getItem("UserInfo")
+
+    if(!data){
+      navigate("/")
+    }
+
+  },[])
   return (
     <>
 

@@ -6,10 +6,13 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/Table';
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { FaPencil } from "react-icons/fa6";
 
 const Teacher = () => {
+
+  let navigate = useNavigate()
 
 
   const [show, setShow] = useState(false);
@@ -25,6 +28,19 @@ const Teacher = () => {
       setData(data.data)
     })
   },[])
+
+
+  useEffect(()=>{
+    let data = localStorage.getItem("UserInfo")
+
+    if(!data){
+      navigate("/")
+    }
+  },[])
+
+
+
+
   return (
     <>
       <div className='main_menu'>

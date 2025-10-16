@@ -51,7 +51,7 @@ app.post('/account',async (req, res) => {
         date:req.body.date,
         id:req.body.id
     }).save()
-     res.send('Account Created Succesfully')
+     res.send('Account Created Succesfully go to login page')
 })
 app.post('/login',async (req, res) => {
 
