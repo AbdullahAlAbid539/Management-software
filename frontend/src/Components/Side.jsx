@@ -1,8 +1,16 @@
 import React from 'react'
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router';
 
 const Side = () => {
+  let navigate = useNavigate()
+
+  let handlelogout = () =>{
+    localStorage.removeItem("UserInfo")
+    navigate("/")
+  }
+
   return (
     <div className='side'>
 
@@ -32,7 +40,7 @@ const Side = () => {
       </ListGroup.Item>
     </ListGroup>
 
-    <a href="/" className='a1'>Logout</a>
+    <Button variant="danger" onClick={handlelogout}>Logout</Button>
 
 
       

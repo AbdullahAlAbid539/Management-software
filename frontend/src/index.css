@@ -32,6 +32,9 @@ a:hover{
     border-radius: 60px;
     padding: 10px 15px;
 }
+button{
+    margin-left: 10px;
+}
 
 /* THIS IS REGISTRATION SECTION CSS IN REACT VITE OF THIS WEB API */
 .main_re{
@@ -163,4 +166,9 @@ a:hover{
 }
 .side .logo_si img{
     height: 100px;
+}
+
+.side Button {
+    margin-top: 25px;
+    margin-left: 65px;
 }

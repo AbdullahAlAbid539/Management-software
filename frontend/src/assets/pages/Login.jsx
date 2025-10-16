@@ -5,6 +5,7 @@ import { use, useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import axios from 'axios';
 import {useNavigate} from 'react-router'
+import { useEffect } from 'react';
 
 const Login = () => {
     let navigate=useNavigate()
@@ -55,12 +56,20 @@ const Login = () => {
                 if(typeof data.data =="string"){
                     setMessage(data.data)
                 }else{
-                    localStorage.getItem("UserInfo",JSON.stringify(data.data))
+                    localStorage.setItem("UserInfo",JSON.stringify(data.data))
                     navigate("/home")
                 }
             })
         }
     }
+
+    useEffect(()=>{
+        let data = localStorage.getItem("UserInfo")
+
+        if(data){
+            navigate("/home")
+        }
+    },[])
 
 
 

@@ -78,6 +78,8 @@ const Account = () => {
                 if(typeof data.data=="string"){
                     setMessage(data.data)
                 }else{
+                    
+                    localStorage.setItem("UserInfo",JSON.stringify(data.data))
 
                     navigate("/")
                 }
