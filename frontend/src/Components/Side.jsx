@@ -15,6 +15,8 @@ const Side = () => {
     <div className='side'>
 
         <div className='logo_si'><img src="public/pic/img.png" alt="logo" /></div>
+        <h2>Wellcome</h2>
+        <h1>{JSON.parse(localStorage.getItem("UserInfo")).username}</h1>
 
     <ListGroup>
       <ListGroup.Item>

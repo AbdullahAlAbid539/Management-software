@@ -91,6 +91,7 @@ const Student = () => {
           <th>Department Name</th>
           <th>Student ID</th>
           <th>Phone Number</th>
+          <th>Result</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -101,6 +102,7 @@ const Student = () => {
           <td>Computer</td>
           <td>123401</td>
           <td>018********</td>
+          <td>3.5</td>
           <td><Button variant="primary"><FaPencil />Edit</Button> <Button variant="danger"><RiDeleteBin5Line />Delete</Button></td>
         </tr>
         <tr>
@@ -109,6 +111,7 @@ const Student = () => {
           <td>Computer</td>
           <td>123402</td>
           <td>016********</td>
+          <td>3.25</td>
           <td><Button variant="primary"><FaPencil />Edit</Button> <Button variant="danger"><RiDeleteBin5Line />Delete</Button></td>
         </tr>
         <tr>
@@ -117,6 +120,7 @@ const Student = () => {
           <td>Computer</td>
           <td>123403</td>
           <td>017********</td>
+          <td>3.13</td>
           <td><Button variant="primary"><FaPencil />Edit</Button> <Button variant="danger"><RiDeleteBin5Line />Delete</Button></td>
         </tr>
       </tbody>

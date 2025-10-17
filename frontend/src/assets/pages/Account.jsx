@@ -2,7 +2,7 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import axios from 'axios'
 import { useNavigate} from 'react-router'
@@ -78,15 +78,21 @@ const Account = () => {
                 if(typeof data.data=="string"){
                     setMessage(data.data)
                 }else{
-                    
                     localStorage.setItem("UserInfo",JSON.stringify(data.data))
-
                     navigate("/")
                 }
             })
         }
 
     }
+
+    useEffect(()=>{
+       let data = localStorage.getItem("UserInfo")
+       
+       if(data){
+        navigate("/home")
+       }
+    },[])
   return (
     <>
       <div className='reg_ac'>

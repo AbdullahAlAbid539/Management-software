@@ -1,6 +1,8 @@
 const express = require ('express')
 const mongoose = require('mongoose');
 const User = require('./model/user')
+const Student = require('./model/studentmodel')
+const Teacher = require('./model/teachermodel')
 var cors = require('cors')
 
 
@@ -73,6 +75,27 @@ app.post('/login',async (req, res) => {
       username:isUserexists.username,
       email:isUserexists.email
      })
+})
+
+app.post('/studentdetail',async(req,res)=>{
+  let student = new Student({
+    studentname:req.body.studentname,
+    department:req.body.department,
+    studentid:req.body.studentid,
+    phonenumber:req.body.phonenumber,
+    result:req.body.result
+  }).save()
+  res.send("Student Data Added successfully")
+})
+app.post('/teacherdetail',async(req,res)=>{
+  let teacher = new Teacher({
+    teachername:req.body.teachername,
+    department:req.body.department,
+    teacherid:req.body.teacherid,
+    phonenumber:req.body.phonenumber
+  }).save()
+  res.send("Teacher Data Added Succesfully")
+
 })
 
 app.listen(5000)
